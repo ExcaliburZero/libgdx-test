@@ -21,31 +21,37 @@
  */
 package com.github.excaliburzero;
 
-import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+public class Player {
 
-public class Main extends ApplicationAdapter {
+    private int xPos;
+    private int yPos;
 
-    private SpriteBatch batch;
-    private Texture img;
-    private Player player;
-    
-    @Override
-    public void create () {
-        batch = new SpriteBatch();
-        img = new Texture("badlogic.jpg");
-        this.player = new Player(50, 50);
+    /**
+     * Instantiates an object of the Player class at the given start position.
+     *
+     * @param x The x position of the Player.
+     * @param y The y position of the Player.
+     */
+    public Player(int x, int y) {
+        this.xPos = x;
+        this.yPos = y;
     }
 
-    @Override
-    public void render () {
-        Gdx.gl.glClearColor(1, 0, 0, 1);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        batch.begin();
-        batch.draw(img, this.player.getXPos(), this.player.getYPos());
-        batch.end();
+    /**
+     * Returns the x position of the Player.
+     *
+     * @return The x position of the Player.
+     */
+    public int getXPos() {
+        return this.xPos;
+    }
+
+    /**
+     * Returns the y position of the Player.
+     *
+     * @return The y position of the Player.
+     */
+    public int getYPos() {
+        return this.yPos;
     }
 }
