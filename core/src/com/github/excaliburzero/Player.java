@@ -26,6 +26,8 @@ public class Player {
     private int xPos;
     private int yPos;
 
+    private int speed;
+
     /**
      * Instantiates an object of the Player class at the given start position.
      *
@@ -35,6 +37,8 @@ public class Player {
     public Player(int x, int y) {
         this.xPos = x;
         this.yPos = y;
+
+        this.speed = 5;
     }
 
     /**
@@ -53,5 +57,13 @@ public class Player {
      */
     public int getYPos() {
         return this.yPos;
+    }
+
+    /**
+     * Moves the player to the left.
+     */
+    public boolean moveLeft() {
+        this.xPos -= this.speed;
+        return true;
     }
 }
